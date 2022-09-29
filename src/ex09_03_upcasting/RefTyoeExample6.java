@@ -1,0 +1,18 @@
+//obj변수의 타입이 Account이기 때문에
+//Account에 없는 pay메소드나 cardNo필드는 컴파일에러 발생
+package ex09_03_upcasting;
+class RefTyoeExample6 {
+	public static void main(String[] args) {
+		Account obj = new CheckingAccount("111-22-33333333", "홍길동", 10,
+				"4444-5555-6666-7777");
+		try {
+			obj.
+			int amount = obj.pay("4444-5555-6666-7777", 47000);
+			System.out.println("매출액: " + amount);
+			System.out.println("카드번호: " + obj.cardNO);
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+}

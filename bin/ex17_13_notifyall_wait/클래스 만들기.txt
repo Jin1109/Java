@@ -1,0 +1,44 @@
+1. 클래스명 : SharedArea(공유 영역 클래스)
+   1) 필드 : double result;
+      접근제어자 :  클래스 내에서만 사용 가능
+      
+   2) 메서드 : 필드에 대한 getter, setter
+      접근제어자 : 어느 패키지든 접근 가능
+      
+   3) 기본 생성자
+
+2. 클래스명 : CalcThread(파이를 계산하는 스레드 클래스)
+   1)부모클래스명 : Thread       
+   2) 필드 :   SharedArea형 한 개
+      접근제어자 :  클래스 내에서만 사용 가능
+      
+   3) 생성자 : SharedArea형 매개변수 1개
+      기능 : 필드를 매개변수로 초기화
+        
+   4) 오버라이딩 메서드
+      public void run() {
+		double total = 0.0;
+		// 파이를 계산하는 부분
+		for (int cnt = 1; cnt < 1000000000; cnt += 2)
+			if (cnt / 2 % 2 == 0)
+				total += 1.0 / cnt;
+			else
+				total -= 1.0 / cnt;
+
+		// 계산 결과를 공유 영역에 저장
+		// total * 4의 결과를 필드의 setResult()를 이용해서 저장
+	}
+
+
+3. 클래스명 : PrintThread
+   1)부모클래스명 : Thread  
+   
+   2) 필드 :   SharedArea형 한 개
+       접근제어자 :  클래스 내에서만 사용 가능
+       
+   3) 생성자 : SharedArea형 매개변수 1개
+      기능 : 필드를 매개변수로 초기화
+        
+   4) public void run() {
+       //공유 영역의 데이터 출력합니다.
+       }

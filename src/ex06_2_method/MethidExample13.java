@@ -1,0 +1,24 @@
+//사용자가 정의한 메서드를 실행할 수 있도록 합니다.
+///이것을메서드 호출이라고 합니다.
+//즉 메서드를 호출하면 해당 메서드를 실행합니다.
+package ex06_2_method;
+
+public class MethidExample13 {
+	
+  //접근제어자	객체생성없이 접근가능		반환된는 값의 자료형		메서드 이름 (매개변수 목록)
+	public 		static 			void 				main(String[] args) {
+		int[] num= {1,2,3,4,5};
+		print(num);	
+		return; //여기서 main()메서드를 종료합니다.	//jvm에서 호출
+					
+	}
+	
+	// 메서드 정의 
+	public static void print(int[] p_num) { 
+		for(int num : p_num)
+				System.out.print(num + " ");
+			
+		return;//반환되는 값의 자료형이 void인 경우 이문장은 생략 가능합니다.
+		
+	}
+}

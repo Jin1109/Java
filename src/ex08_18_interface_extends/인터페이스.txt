@@ -1,0 +1,51 @@
+1. 인터페이스 Movable
+2. 추상 메서드
+     // 절대 위치로 이동한다 
+	void moveTo(int x, int y);  
+    
+    // 상대 위치만큼 이동한다.
+	void moveBy(int xOffset, int yOffset); 
+==============================================================
+1. interface 이름 : Transformable(부모 Movable)
+2. 추상 메서드
+    // 크기를 변경한다
+    void resize(int width, int height);   
+==========================================================
+1. 클래스 이름 : Rectangle(부모 : Transformable)
+2. 생성자 : 필드 초기화(int x, int y, int width, int height)
+3. 필드 : 
+    int x, y, width, height;
+4. 메서드 - 오버라이딩
+    resize(int width, int height) 
+        기능) 두 개의 매개변수를 이용해 필드 초기화  
+    
+5. 메서드 -오버라이딩
+   moveTo(int x, int y)
+     기능) 두 개의 매개변수를 이용해 필드 초기화  
+     
+6. 메서드 -오버라이딩
+   moveBy(int xOffset, int yOffset)
+     기능) 기존 x값에 xOffset을 더해 x를 구한다.
+               기존 y값에 yOffset을 더해 y를 구한다.
+======================================
+다음 조건을 만족하는 printRectangle()메서드 완성하세요.
+public static void main(String args[]) {
+        Rectangle obj = new Rectangle(100, 200, 10, 10); 
+        printRectangle(obj);
+        
+        obj.moveTo(25, 35);            
+        printRectangle(obj);
+        
+        obj.moveBy(-5, -5);           
+        printRectangle(obj);
+        
+        obj.resize(30, 30);           
+        printRectangle(obj);
+    }
+    
+출력결과)    
+사각형: 위치(100, 200) 크기( 10 x  10) 
+사각형: 위치( 25,  35) 크기( 10 x  10) 
+사각형: 위치( 20,  30) 크기( 10 x  10) 
+사각형: 위치( 20,  30) 크기( 30 x  30) 
+    
